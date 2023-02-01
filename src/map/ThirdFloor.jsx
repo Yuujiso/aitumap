@@ -1,10 +1,9 @@
 import React from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { useWindowDimensions } from "../hooks/useWindowDimensions";
 
 const ThirdFloor = () => {
-  
-  const height = window.innerHeight;
-  const width = window.innerWidth;   
+  const { height, width } = useWindowDimensions();
   
   return (
   <TransformWrapper
