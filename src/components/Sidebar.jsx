@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Drawer,
@@ -26,8 +26,10 @@ import {
 
 const Sidebar = ({ handleOptionChange }) => {
 
+  const [selectedValue, setSelectedValue] = useState('first');
   const handleChange = (e) => {
     handleOptionChange(e.target.value);
+    setSelectedValue(e.target.value);
   };
   const customSidebarWidth = 240;
   var customSidebarMaxWidth = 300;
@@ -75,6 +77,7 @@ const Sidebar = ({ handleOptionChange }) => {
             <List spacing={3}>
                 <ListItem>
                 <Select 
+                  value={selectedValue}
                   onChange={handleChange}
                   bg='teal.500'
                 >

@@ -1,8 +1,8 @@
 {
-  "homepage": "https://Yuujiso.github.io/",
+  "homepage": "https://Yuujiso.github.io/aitumap",
   "name": "aitumap",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.4.9",
