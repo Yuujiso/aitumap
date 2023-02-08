@@ -14,7 +14,7 @@ const FloorOption = ({ handleOptionChange }) => {
   const color = useColorModeValue("#242a36", "#edf2f7");
   const colorText = useColorModeValue("#edf2f7", "#242a36");
   const colorTextCurrent = useColorModeValue("#242a36", "#edf2f7");
-  const buttonSize = "60px";
+  const buttonSize = "40px";
   const floorData = [
     {
       id: 1,
@@ -39,10 +39,10 @@ const FloorOption = ({ handleOptionChange }) => {
       top="44%"
       right="4%"
       bg={color}
-      borderRadius="50px"
-      p="5px"
-      w="70px"
-      h="190px">
+      borderRadius="30px"
+      p="3.3px"
+      w="46.6666x"
+      h="126.6666px">
       {floorData.map((item) => {
         return (
           <Button
@@ -53,7 +53,7 @@ const FloorOption = ({ handleOptionChange }) => {
             w={buttonSize}
             h={buttonSize}
             _hover={{ bg: "#4da2ff" }}
-            borderRadius="40px"
+            borderRadius="20px"
             color={floorCurrent === item.name ? colorTextCurrent : colorText}>
             {item.id}
           </Button>
