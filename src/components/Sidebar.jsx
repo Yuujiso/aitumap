@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Button,
   Drawer,
@@ -13,24 +13,18 @@ import {
   DrawerFooter,
   List,
   ListItem,
-  Select,
   Icon,
   useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import {
   ArrowRightIcon,
   ArrowLeftIcon,
   SunIcon,
-  MoonIcon
+  MoonIcon,
 } from "@chakra-ui/icons";
 
-const Sidebar = ({ handleOptionChange }) => {
-
-  const [selectedValue, setSelectedValue] = useState('first');
-  const handleChange = (e) => {
-    handleOptionChange(e.target.value);
-    setSelectedValue(e.target.value);
-  };
+const Sidebar = () => {
   const customSidebarWidth = 240;
   var customSidebarMaxWidth = 300;
   var closeButtonWidth = 50;
@@ -38,15 +32,17 @@ const Sidebar = ({ handleOptionChange }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <>
-      <Button 
-        id="sidebar-open-btn" 
-        onClick={onOpen} 
-        left="0px" 
-        top="10px" 
+    <Box pos="absolute">
+      <Button
+        id="sidebar-open-btn"
+        onClick={onOpen}
+        left="0px"
+        top="62px"
+        h="100px"
+        bg={useColorModeValue("#edf2f7", "#242a36")}
+        _hover={{ bg: "#ffffff5e" }}
         zIndex={1}
-        borderStartRadius="0"
-      >
+        borderStartRadius="0">
         <ArrowRightIcon />
       </Button>
       <Drawer
@@ -55,17 +51,19 @@ const Sidebar = ({ handleOptionChange }) => {
         isOpen={isOpen}
         userSelect={"none"}
         blockScrollOnMount={false}
-      >
+        zIndex={2}>
         <DrawerOverlay />
         <DrawerContent w={customSidebarWidth} maxW={customSidebarMaxWidth}>
           <Button
             onClick={onClose}
             w={closeButtonWidth}
             right="-50px"
-            top="10px"
+            top="62px"
+            h="100px"
             borderStartRadius="0"
-            position="absolute"
-          >
+            bg={useColorModeValue("#edf2f7", "#242a36")}
+            _hover={{ bg: "#ffffff5e" }}
+            position="absolute">
             <ArrowLeftIcon />
           </Button>
           <DrawerHeader borderBottomWidth="1px">
@@ -75,44 +73,38 @@ const Sidebar = ({ handleOptionChange }) => {
           </DrawerHeader>
           <DrawerBody w="100%">
             <List spacing={3}>
-                <ListItem>
-                <Select 
-                  value={selectedValue}
-                  onChange={handleChange}
-                  bg='teal.500'
-                >
-                  <option value='first'>first floor</option>
-                  <option value='second'>second floor</option>
-                  <option value='third'>third floor</option>
-                </Select>
-                </ListItem>
-                <ListItem>
-                    <Button 
-                      onClick={() => toggleColorMode()} 
-                      boxShadow={"lg"}
-                      w="100%" 
-                    >
-                      <Text size="sm">change theme</Text><Icon as={colorMode === "light" ? SunIcon : MoonIcon} ml="0.5rem"/>
-                    </Button>
-                </ListItem>
-                <ListItem>
-                  <Link href="https://t.me/yuujisoo/74">
-                    <Button 
-                      boxShadow={"lg"}
-                      w="100%" 
-                    >
-                      <Text size="sm">about</Text>
-                    </Button>
-                    </Link>
-                </ListItem>
-              </List>
+              <ListItem>
+                <Button
+                  onClick={() => toggleColorMode()}
+                  boxShadow={"lg"}
+                  w="100%">
+                  <Text size="sm">change theme</Text>
+                  <Icon
+                    as={colorMode === "light" ? SunIcon : MoonIcon}
+                    ml="0.5rem"
+                  />
+                </Button>
+              </ListItem>
+              <ListItem>
+                <Link href="https://github.com/Yuujiso/aitumap">
+                  <Button boxShadow={"lg"} w="100%">
+                    <Text size="sm">github</Text>
+                  </Button>
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="https://t.me/yuujisoo/74">
+                  <Button boxShadow={"lg"} w="100%">
+                    <Text size="sm">about</Text>
+                  </Button>
+                </Link>
+              </ListItem>
+            </List>
           </DrawerBody>
           <DrawerFooter>
-            <List w="100%" display="flex" flexDirection="column" >
+            <List w="100%" display="flex" flexDirection="column">
               <ListItem justify="space-between">
-                <Link href="https://t.me/yuujiso">
-                  @yuujiso
-                </Link>
+                <Link href="https://t.me/yuujiso">@yuujiso</Link>
               </ListItem>
               <ListItem>
                 <Link href="https://t.me/mezzzzzanine">@mezzzzzanine</Link>
@@ -120,15 +112,13 @@ const Sidebar = ({ handleOptionChange }) => {
               <ListItem>
                 <Link href="https://t.me/adiletaskar">@adiletaskar</Link>
               </ListItem>
-              <ListItem>
-                SE-2107
-              </ListItem>
+              <ListItem>SE-2107</ListItem>
             </List>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-    </>
+    </Box>
   );
-}
+};
 
 export default Sidebar;
