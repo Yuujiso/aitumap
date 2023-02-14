@@ -27,13 +27,13 @@ import {
 const Sidebar = () => {
   const customSidebarWidth = 240;
   var customSidebarMaxWidth = 300;
-  var closeButtonWidth = 50;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Box pos="absolute">
       <Button
+        size="xs"
         id="sidebar-open-btn"
         onClick={onOpen}
         left="0px"
@@ -56,8 +56,8 @@ const Sidebar = () => {
         <DrawerContent w={customSidebarWidth} maxW={customSidebarMaxWidth}>
           <Button
             onClick={onClose}
-            w={closeButtonWidth}
-            right="-50px"
+            size="xs"
+            right="-28px"
             top="62px"
             h="100px"
             borderStartRadius="0"

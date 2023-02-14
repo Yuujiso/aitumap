@@ -55,7 +55,8 @@ const FirstFloor = () => {
                     .room-map-group tspan.map-element-label  {
                         color: #ffffff;
                         fill: #ffffff;
-                        font: 11px sans-serif
+                        font: 11px sans-serif;
+                        text-rendering: optimizeSpeed;
                     }
                     .room-map-group:hover{
                         fill:#62cf6b;
@@ -495,7 +496,10 @@ const FirstFloor = () => {
                 </text>
               </g>
               <g id="_2.129" data-name="2.129" className="room-map-group">
-                <polyline points="399.62 189.67 396.13 138.17 417.45 136.85 422.23 235.43 408.65 236.67 407.73 225.94 402.13 226.53 399.86 193.14" />
+                <polyline
+                  class="cls-2"
+                  points="399.62 189.67 396.13 138.17 417.45 136.85 422.23 235.43 402.78 237.28 399.86 193.14"
+                />{" "}
                 <text
                   transform="translate(405.58 179.62) rotate(85.57)"
                   className="map-element-label">
