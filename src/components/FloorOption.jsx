@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Button, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Button, Flex, useColorModeValue } from "@chakra-ui/react";
 
 const FloorOption = ({ handleOptionChange }) => {
   const [floorCurrent, setFloorCurrent] = useState("first");
@@ -14,7 +14,6 @@ const FloorOption = ({ handleOptionChange }) => {
   const color = useColorModeValue("#242a36", "#edf2f7");
   const colorText = useColorModeValue("#edf2f7", "#242a36");
   const colorTextCurrent = useColorModeValue("#242a36", "#edf2f7");
-  const buttonSize = "30px";
   const floorData = [
     {
       id: 3,
