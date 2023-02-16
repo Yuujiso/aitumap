@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import Show from "./Show";
+import ShowIOS from "./ShowIOS";
 import FloorOption from "./FloorOption";
 import { Box } from "@chakra-ui/react";
 
-const Home = () => {
+const Home = ({ isIOS }) => {
   const [selectedOption, setSelectedOption] = useState("first");
   const handleOptionChange = (option) => {
     setSelectedOption(option);
@@ -15,7 +16,11 @@ const Home = () => {
       <Box>
         <FloorOption handleOptionChange={handleOptionChange} />
         <Sidebar />
-        <Show selectedOption={selectedOption} />
+        {isIOS ? (
+          <ShowIOS selectedOption={selectedOption} />
+        ) : (
+          <Show selectedOption={selectedOption} />
+        )}
       </Box>
     </>
   );

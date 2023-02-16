@@ -1,14 +1,14 @@
 import React from "react";
-import FirstFloor from "../map/FirstFloor.jsx";
-import SecondFloor from "../map/SecondFloor.jsx";
+import FirstFloorIOS from "../map/FirstFloorIOS.jsx";
+import SecondFloorIOS from "../map/SecondFloorIOS.jsx";
 import ThirdFloor from "../map/ThirdFloor.jsx";
 
 const Show = ({ selectedOption }) => {
   switch (selectedOption) {
     case "first":
-      return <FirstFloor />;
+      return <FirstFloorIOS />;
     case "second":
-      return <SecondFloor />;
+      return <SecondFloorIOS />;
     case "third":
       return <ThirdFloor />;
   }

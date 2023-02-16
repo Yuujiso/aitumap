@@ -6,6 +6,7 @@ import {
   CSSReset,
 } from "@chakra-ui/react";
 import Home from "./components/Home";
+import { isIOS } from "mobile-device-detect";
 
 function App() {
   return (
@@ -13,11 +14,10 @@ function App() {
       <ThemeProvider theme={theme}>
         <ColorModeProvider>
           <CSSReset />
-            <Home/>
+          <Home isIOS={isIOS} />
         </ColorModeProvider>
       </ThemeProvider>
     </ChakraProvider>
-   
   );
 }
 
