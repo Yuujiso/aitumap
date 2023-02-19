@@ -17,71 +17,93 @@ const SecondFloorIOS = () => {
             <defs>
               <style>
                 {`  
-                    .map-group,
-                    .room-map-group{
-                      fill:#4da2ff;
-                    }
+                  .map-group,
+                  .text-map-group,
+                  .room-map-group{
+                    fill:#4da2ff;
+                  }
 
-                    .map-group.tech{
-                      fill:#bfbfbf;
-                      pointer-events: none;
-                    }
+                  .map-group.tech{
+                    fill:#bfbfbf;
+                    pointer-events: none;
+                  }
 
-                    .map-group.stairs{
-                      fill:none;
-                      pointer-events: none;
-                    }
+                  .map-group.stairs{
+                    fill:none;
+                    pointer-events: none;
+                  }
 
-                    .map-group.another{
-                      fill:#ac7ab6;
-                      pointer-events: none;
-                    }
+                  .map-group.another{
+                    fill:#ac7ab6;
+                    pointer-events: none;
+                  }
 
-                    .map-group .map-element-wall,
-                    .map-group polyline,
-                    .map-group line,
-                    .map-group polygon,
-                    .room-map-group .map-element-wall,
-                    .room-map-group polyline,
-                    .room-map-group line, 
-                    .room-map-group polygon {
-                      stroke:#7f7f7f;
-                    }
+                  .map-group .map-element-wall,
+                  .map-group polyline,
+                  .map-group line,
+                  .map-group polygon,
+                  .room-map-group .map-element-wall,
+                  .room-map-group polyline,
+                  .room-map-group line, 
+                  .room-map-group polygon,
+                  .text-map-group .map-element-wall,
+                  .text-map-group polyline,
+                  .text-map-group line, 
+                  .text-map-group polygon{
+                    stroke:#7f7f7f;
+                  }
 
-                    path.map-noway-wall,
-                    polyline.map-noway-wall,
-                    line.map-noway-wall{
-                      stroke:#7f7f7f;
-                      fill:none;
-                    }
 
-                    .room-map-group path{
-                      stroke:#ffffff !important;
-                      stroke-width: 0.1 !important;
-                      fill: #ffffff !important;
-                    }
-                    .room-map-group text,
-                    .room-map-group tspan{
-                      color: #ffffff;
-                      fill: #ffffff;
-                      font-size: 11px !important;
-                      font-family: sans-serif !important;
-                      text-rendering: optimizeSpeed;
-                    }
-                    
-                    .map-group map-element-label,
-                    .room-map-group text.map-element-label,
-                    .room-map-group tspan.map-element-label  {
-                      color: #ffffff !important;
-                      fill: #ffffff !important;
-                      font-size: 11px !important;
-                      font-family: sans-serif !important;
-                      text-rendering: optimizeSpeed !important;
-                    }
+                  path.map-noway-wall,
+                  polyline.map-noway-wall,
+                  line.map-noway-wall{
+                    stroke:#7f7f7f;
+                    fill:none;
+                  }
 
-                    .room-map-group:hover{
-                      fill:#62cf6b;
-                    }
+                  .room-map-group path{
+                    stroke:#ffffff !important;
+                    stroke-width: 0.1 !important;
+                    fill: #ffffff !important;
+                  }
+
+                  .text-map-group path{
+                    stroke:#7f7f7f !important;
+                    stroke-width: 0.1 !important;
+                    fill: #7f7f7f !important;
+                  }
+
+                  .room-map-group text,
+                  .room-map-group tspan{
+                    color: #ffffff;
+                    fill: #ffffff;
+                    font-size: 11px !important;
+                    font-family: sans-serif !important;
+                    text-rendering: optimizeSpeed;
+                  }
+
+                  .text-map-group text,
+                  .text-map-group tspan{
+                    color: #7f7f7f;
+                    fill: #7f7f7f;
+                    font-size: 11px !important;
+                    font-family: sans-serif !important;
+                    text-rendering: optimizeSpeed;
+                  }
+                  
+                  .map-group map-element-label,
+                  .room-map-group text.map-element-label,
+                  .room-map-group tspan.map-element-label  {
+                    color: #ffffff !important;
+                    fill: #ffffff !important;
+                    font-size: 11px !important;
+                    font-family: sans-serif !important;
+                    text-rendering: optimizeSpeed !important;
+                  }
+
+                  .room-map-group:hover{
+                    fill:#62cf6b;
+                  }
                 `}
               </style>
             </defs>
@@ -1255,48 +1277,14 @@ const SecondFloorIOS = () => {
                     </g>
                   </g>
                 </g>
-                <g id="ACTZAL-GROUP" className="room-map-group">
-                  <g id="ACTZAL" className="map-element-label">
-                    <path
-                      d="M229.43,434.57l-.17,3.29-1.28.36.62-10.5,1.49-.41L236,436l-1.32.36-1.86-2.74Zm2.88-1.83-1.7-2.51c-.39-.57-.69-1.1-1-1.61h0c0,.6,0,1.23,0,1.87l-.17,3Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
-                    <path
-                      d="M236,425.68l1.17,4.26.38-.11,2.12-5.16,1.5-.41-2.43,5.4c1.64-.22,2.52.58,3.38,1.74a26.41,26.41,0,0,0,1.8,2.43l-1.34.37a17.72,17.72,0,0,1-1.49-2c-.79-1.14-1.64-1.84-3.26-1.4l-.4.11,1.21,4.4-1.23.34-2.64-9.6Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
-                    <path
-                      d="M245,424.33l-2.92.81-.29-1.06,7.11-1.95.29,1.05-2.94.81,2.35,8.54-1.25.35Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
-                    <path
-                      d="M259,424.42c.91,3.3-.61,5.6-3.06,6.28s-4.86-.78-5.66-3.69.51-5.56,3.07-6.26S258.21,421.57,259,424.42Zm-7.4,2.2c.56,2.05,2.18,3.58,4.13,3.05s2.58-2.66,2-4.84c-.53-1.91-2.07-3.63-4.14-3.06S251,424.51,251.59,426.62Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
-                    <path
-                      d="M259.35,419.4a12.75,12.75,0,0,1,2.21-.82,4.1,4.1,0,0,1,2.82,0,2.09,2.09,0,0,1,1.27,1.48,2.37,2.37,0,0,1-1,2.55v0a2.57,2.57,0,0,1,2.64,1.86,2.66,2.66,0,0,1-.28,2.15,5,5,0,0,1-3.07,1.81,14.74,14.74,0,0,1-2,.41Zm2.32,3.59,1.12-.31c1.31-.36,1.89-1.26,1.64-2.18-.31-1.13-1.29-1.33-2.54-1a5.25,5.25,0,0,0-1.07.39Zm1.26,4.6a6.47,6.47,0,0,0,1.06-.23c1.28-.35,2.33-1.15,1.95-2.54s-1.64-1.54-3-1.17l-1,.28Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
-                    <path
-                      d="M268.27,416.81l1,3.59a8.65,8.65,0,0,1,1.12-.39c2-.54,3.94-.15,4.53,2a3,3,0,0,1-.18,2.24,4.89,4.89,0,0,1-3.11,2.06,15.44,15.44,0,0,1-1.95.42L267,417.15Zm2.38,8.64a4.61,4.61,0,0,0,1-.2c1.36-.38,2.35-1.4,1.95-2.85s-1.85-1.72-3.13-1.36a6.21,6.21,0,0,0-1,.34Zm4.78-10.61,2.65,9.59-1.26.35-2.64-9.6Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
-                    <path
-                      d="M278.83,413.9l1.11,4.05c.42,1.52.74,2.78,1,4.09h0a37.22,37.22,0,0,1,.9-3.66l1.75-5.8,1.24-.34,2.64,9.6-1.17.32-1.13-4.09c-.42-1.55-.72-2.69-1-3.93h0a30.73,30.73,0,0,1-.89,3.72l-1.7,5.6-1.32.36-2.64-9.6Zm1-2.44c.18.43.44.83,1.11.65s.7-.64.63-1.12l.95-.27c.19,1-.22,1.7-1.43,2a1.61,1.61,0,0,1-2.21-1Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
-                    <path
-                      d="M248.7,441.19a4.69,4.69,0,0,1,2.34-1.42c1.66-.46,3.06.09,3.46,1.57a2.5,2.5,0,0,1-1.33,2.88v0a2.47,2.47,0,0,1,3,1.76c.55,2-1,3.27-2.71,3.75a5.05,5.05,0,0,1-2.67.07l.06-1.06a5,5,0,0,0,2.31,0c1.42-.39,2-1.38,1.7-2.43-.39-1.44-1.89-1.47-3.11-1.14l-.57.16-.26-.94.57-.16a2.09,2.09,0,0,0,1.76-2.38,1.56,1.56,0,0,0-2.14-1,4.15,4.15,0,0,0-1.82,1.18Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
-                    <path
-                      d="M259.29,444.74l-.17,3.3-1.28.35.62-10.5,1.49-.41,5.92,8.7-1.32.36-1.86-2.73Zm2.88-1.83-1.7-2.5c-.39-.57-.69-1.1-1-1.62h0c0,.61,0,1.23,0,1.87l-.17,3Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
-                    <path
-                      d="M271.43,434.32l2.65,9.6-1.26.35-2.35-8.56-3.18.87.8,2.91c.57,2.08,1.13,4.42,0,5.71a3.05,3.05,0,0,1-1.34.86l-.43-1a2.24,2.24,0,0,0,.87-.79c.56-1,.12-2.85-.3-4.39l-1.12-4Z"
-                      transform="translate(-51.69 -158.58)"
-                    />
+                <g id="ASSEMBLYHALL-GROUP" className="text-map-group">
+                  <g id="ASSEMBLYHALL" className="map-element-label">
+                    <text transform="matrix(0.97, -0.26, 0.26, 0.97, 177.58, 287)">
+                      ASSEMBLY
+                    </text>
+                    <text transform="matrix(0.97, -0.26, 0.26, 0.97, 199.88, 295.64)">
+                      HALL
+                    </text>
                     <polyline
                       className="map-noway-wall"
                       id="WALL"
