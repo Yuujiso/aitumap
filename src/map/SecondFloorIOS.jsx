@@ -1048,9 +1048,9 @@ const SecondFloorIOS = () => {
                     <polyline points="276 296.04 273.1 296.6 281.46 339.39 305.56 334.5 298.22 291.72 279.17 295.42" />
                     <text transform="translate(277.11 318.62)">244K</text>
                   </g>
-                  <g id="_1.254K" data-name="1.254K" className="room-map-group">
+                  <g id="_1.245K" data-name="1.245K" className="room-map-group">
                     <polyline points="300.94 291.31 298.22 291.72 305.56 334.5 333.1 330.61 326.32 287.5 303.87 290.87" />
-                    <text transform="translate(302.88 315.46)">254K</text>
+                    <text transform="translate(302.88 315.46)">245K</text>
                   </g>
                   <g id="_1.240K" data-name="1.240K" className="room-map-group">
                     <polyline points="267.9 250.96 267.2 247.18 243.65 252.42 251.94 288.34 273.85 283.5 268.57 254.64" />
