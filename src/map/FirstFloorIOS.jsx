@@ -1,56 +1,12 @@
-import React, { useState } from "react";
-import { Center, Input, useColorModeValue } from "@chakra-ui/react";
+import React from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
-import { isMobile } from "mobile-device-detect";
 
 const FirstFloorIOS = () => {
   const { height, width } = useWindowDimensions();
 
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-
-    const groups = document.querySelectorAll(
-      `[data-name="${event.target.value.toUpperCase()}"]`
-    );
-
-    if (groups.length > 0) {
-      groups.forEach((group) => {
-        group.classList.add("room-map-group-search-target");
-      });
-    }
-
-    const groupsToRemove = document.querySelectorAll(
-      `[data-name]:not([data-name="${event.target.value.toUpperCase()}"])`
-    );
-
-    if (groupsToRemove.length > 0) {
-      groupsToRemove.forEach((group) => {
-        group.classList.remove("room-map-group-search-target");
-      });
-    }
-  };
-
-  let inputWidth = isMobile ? width : 400;
-
   return (
     <>
-      <Center pos="absolute" w={width} zIndex={101}>
-        <Input
-          p={5}
-          mt={2.5}
-          w={inputWidth}
-          bg={useColorModeValue("#242a36", "#edf2f7")}
-          color={useColorModeValue("#edf2f7", "#242a36")}
-          type="text"
-          placeholder="Search room: e.g. type: 3.126"
-          _placeholder={{ color: useColorModeValue("#edf2f7", "#242a36") }}
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-      </Center>
       <TransformWrapper defaultScale={1}>
         {({
           zoomIn,

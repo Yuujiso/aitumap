@@ -1,56 +1,12 @@
-import React, { useState } from "react";
-import { Center, Input, useColorModeValue } from "@chakra-ui/react";
+import React from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
-import { isMobile } from "mobile-device-detect";
 
 const FirstFloor = () => {
   const { height, width } = useWindowDimensions();
 
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-
-    const groups = document.querySelectorAll(
-      `[data-name="${event.target.value.toUpperCase()}"]`
-    );
-
-    if (groups.length > 0) {
-      groups.forEach((group) => {
-        group.classList.add("room-map-group-search-target");
-      });
-    }
-
-    const groupsToRemove = document.querySelectorAll(
-      `[data-name]:not([data-name="${event.target.value.toUpperCase()}"])`
-    );
-
-    if (groupsToRemove.length > 0) {
-      groupsToRemove.forEach((group) => {
-        group.classList.remove("room-map-group-search-target");
-      });
-    }
-  };
-
-  let inputWidth = isMobile ? width : 400;
-
   return (
     <>
-      <Center pos="absolute" w={width} zIndex={101}>
-        <Input
-          p={5}
-          mt={2.5}
-          w={inputWidth}
-          bg={useColorModeValue("#242a36", "#edf2f7")}
-          color={useColorModeValue("#edf2f7", "#242a36")}
-          type="text"
-          placeholder="Search room: e.g. type: 3.126"
-          _placeholder={{ color: useColorModeValue("#edf2f7", "#242a36") }}
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-      </Center>
       <TransformWrapper defaultScale={1}>
         {({
           zoomIn,
@@ -751,7 +707,7 @@ const FirstFloor = () => {
                       className="room-map-group">
                       <polyline points="499.69 239.76 498.59 264.76 517.95 265.68 522.75 187.77 502.01 186.86 500.03 231.93" />
                     </g>
-                    <g id="_1.129" data-name="1.129" className="room-map-group">
+                    <g id="_2.129" data-name="2.129" className="room-map-group">
                       <polyline points="420.63 241.19 422.86 287.07 403.4 288.93 396.75 189.82 418.07 188.5 420.27 232.9" />
                       <path
                         d="M465.23,395l-7,.62-.1-1.05,5.91-.53v0l-1.23-1.57,1-.09,1.29,1.63Zm-6.78,2.5.76-.06,2.65,2.13c.29.23.54.41.75.56a3.29,3.29,0,0,0,.61.32,1.65,1.65,0,0,0,.59.07,1.1,1.1,0,0,0,.58-.22,1,1,0,0,0,.35-.48,1.39,1.39,0,0,0,.08-.65,1.31,1.31,0,0,0-.21-.64,1,1,0,0,0-.47-.38,1.3,1.3,0,0,0-.66-.1l-.1-1a2.12,2.12,0,0,1,1.14.19,2,2,0,0,1,.81.74,2.44,2.44,0,0,1,.37,1.13,2.39,2.39,0,0,1-.16,1.18,2,2,0,0,1-.63.85,1.86,1.86,0,0,1-1,.37,1.83,1.83,0,0,1-.77-.08,3.11,3.11,0,0,1-.87-.42,13.92,13.92,0,0,1-1.19-.89l-1.57-1.25h0l.28,3.13-.9.08Zm7.78,7.55a2.67,2.67,0,0,1-.08.93,2.21,2.21,0,0,1-.47.86,2.7,2.7,0,0,1-1,.68,5.13,5.13,0,0,1-1.57.36,6.32,6.32,0,0,1-1.64,0,3.76,3.76,0,0,1-1.25-.42,2.28,2.28,0,0,1-.81-.76,2.35,2.35,0,0,1-.36-1.07,2.41,2.41,0,0,1,.15-1.12,2.06,2.06,0,0,1,.6-.85,2.31,2.31,0,0,1,1-.47l.09,1a1.32,1.32,0,0,0-.69.48,1.23,1.23,0,0,0-.2.84,1.36,1.36,0,0,0,.77,1.13,3.55,3.55,0,0,0,1.91.26v-.05a1.9,1.9,0,0,1-.54-.4,2.21,2.21,0,0,1-.38-.56,2.43,2.43,0,0,1-.18-.68,2.12,2.12,0,0,1,.2-1.12,2.27,2.27,0,0,1,.74-.86,2.43,2.43,0,0,1,1.15-.4,2.53,2.53,0,0,1,1.23.19,2.28,2.28,0,0,1,.92.77A2.48,2.48,0,0,1,466.23,405.06Zm-.88.08a1.3,1.3,0,0,0-.26-.7,1.4,1.4,0,0,0-.57-.45,1.56,1.56,0,0,0-.75-.12,1.58,1.58,0,0,0-.72.24,1.44,1.44,0,0,0-.47.54,1.36,1.36,0,0,0-.13.73,1.31,1.31,0,0,0,.17.55,1.44,1.44,0,0,0,.36.42,1.77,1.77,0,0,0,.49.26,1.51,1.51,0,0,0,.56.06,1.55,1.55,0,0,0,.7-.25,1.38,1.38,0,0,0,.48-.54A1.25,1.25,0,0,0,465.35,405.14Z"
