@@ -37,11 +37,11 @@ const Sidebar = () => {
         id="sidebar-open-btn"
         onClick={onOpen}
         left="0px"
-        top="62px"
-        h="100px"
+        top="20px"
+        h="40px"
         bg={useColorModeValue("#edf2f7", "#242a36")}
         _hover={{ bg: "#ffffff5e" }}
-        zIndex={1}
+        zIndex={100}
         borderStartRadius="0">
         <ArrowRightIcon />
       </Button>
@@ -57,17 +57,18 @@ const Sidebar = () => {
           <Button
             onClick={onClose}
             size="xs"
-            right="-28px"
-            top="62px"
-            h="100px"
-            borderStartRadius="0"
+            right="0px"
+            top="20px"
+            h="40px"
+            w="80px"
+            borderEndRadius="0"
             bg={useColorModeValue("#edf2f7", "#242a36")}
             _hover={{ bg: "#ffffff5e" }}
             position="absolute">
             <ArrowLeftIcon />
           </Button>
           <DrawerHeader borderBottomWidth="1px">
-            <Box w="100%" h="100%" m="0px">
+            <Box w="100%" h="100%" p="7.5px">
               aitu map demo
             </Box>
           </DrawerHeader>
