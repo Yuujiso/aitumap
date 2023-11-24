@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/aitumap/static/css/main.ab17a26c.css",
+    "main.css": "/aitumap/static/css/main.e1c7862a.css",
     "main.js": "/aitumap/static/js/main.33eb9896.js",
     "static/js/698.51d04978.chunk.js": "/aitumap/static/js/698.51d04978.chunk.js",
     "static/js/572.36411280.chunk.js": "/aitumap/static/js/572.36411280.chunk.js",
@@ -22,7 +22,7 @@
     "static/js/428.7e08fb26.chunk.js": "/aitumap/static/js/428.7e08fb26.chunk.js",
     "static/js/964.bb064659.chunk.js": "/aitumap/static/js/964.bb064659.chunk.js",
     "index.html": "/aitumap/index.html",
-    "main.ab17a26c.css.map": "/aitumap/static/css/main.ab17a26c.css.map",
+    "main.e1c7862a.css.map": "/aitumap/static/css/main.e1c7862a.css.map",
     "main.33eb9896.js.map": "/aitumap/static/js/main.33eb9896.js.map",
     "698.51d04978.chunk.js.map": "/aitumap/static/js/698.51d04978.chunk.js.map",
     "572.36411280.chunk.js.map": "/aitumap/static/js/572.36411280.chunk.js.map",
@@ -45,7 +45,7 @@
     "964.bb064659.chunk.js.map": "/aitumap/static/js/964.bb064659.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab17a26c.css",
+    "static/css/main.e1c7862a.css",
     "static/js/main.33eb9896.js"
   ]
 }
